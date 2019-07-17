@@ -2,6 +2,7 @@ package com.rock.client.task;
 
 import org.junit.Test;
 
+import java.text.SimpleDateFormat;
 import java.util.Timer;
 
 /**
@@ -13,6 +14,7 @@ public class TaskTest {
 
     @Test
     public void testTask(){
+        new SimpleDateFormat();
     }
 
     public static void main(String[] args){

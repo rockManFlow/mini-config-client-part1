@@ -1,7 +1,12 @@
 spring:
   cloud:
     config:
-      name: mini-config-client-part1 # 需要从github上读取资源名称 注意没有yml 这个是配置文件名
+    # 需要从github上读取资源名称 注意没有yml 这个是配置文件名
+    #没有对应的文件名默认会取配置文件名为application的
+      name: aaaaaaa
       profile: test # 本次访问的配置项-可以设置环境变量
       label:  master #分支版本
       uri: http://localhost:3366 # 配置中心地址
+      #安全账号密码
+      username: mini-config
+      password: config123

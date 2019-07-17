@@ -26,4 +26,8 @@ public class PrintTask extends TimerTask {
         log.info("Run Count="+runCount);
         log.info("End Run Print Task");
     }
+
+    public PrintTask(){
+        log.info("PrintTask init");
+    }
 }

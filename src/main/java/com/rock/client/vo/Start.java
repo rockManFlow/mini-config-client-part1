@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.Timer;
 
 /**
@@ -15,19 +16,16 @@ import java.util.Timer;
 @Component
 @Slf4j
 public class Start implements InitializingBean {
+    @Resource
     private PrintTask printTask;
     Start(){
         log.info("Start构造函数执行");
-        Timer timer=new Timer();
-        timer.schedule(printTask,1000L,2000L);
-    }
-
-    public void setPrintTask(PrintTask printTask){
-        this.printTask=printTask;
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-
+        log.info("afterPropertiesSet");
+        Timer timer=new Timer();
+        timer.schedule(printTask,1000L,2000L);
     }
 }
