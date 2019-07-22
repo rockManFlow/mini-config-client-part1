@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
  * @date 2019/7/17 18:20
  */
 public class SimpleDateFormatFactory {
-    private static final ThreadLocal<SimpleDateFormat> local=new ThreadLocal<>();
+    private static final ThreadLocal<SimpleDateFormat> local=new ThreadLocal<SimpleDateFormat>();
 
     public static SimpleDateFormat getInstance(String format){
         SimpleDateFormat simpleDateFormat=local.get();

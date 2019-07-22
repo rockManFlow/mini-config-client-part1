@@ -2,8 +2,10 @@ package com.rock.client;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
-@SpringBootApplication(scanBasePackages = "com.rock.client")
+@EnableFeignClients(basePackages = "com.rock")
+@SpringBootApplication
 public class ConfigClientApplication {
     public static void main(String[] args) {
         SpringApplication.run(ConfigClientApplication.class,args);
