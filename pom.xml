@@ -20,6 +20,17 @@
     </parent>
     <dependencies>
         <!--这些配置基本就把spring框架搭起来了，接下来关键是注解的使用-->
+        <!-- 忽略自带的日志框架. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <!--用于测试支持-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -28,6 +39,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
         <!--config服务端依赖-->
         <dependency>
@@ -39,13 +54,12 @@
             <artifactId>spring-cloud-starter-feign</artifactId>
             <version>1.3.5.RELEASE</version>
         </dependency>
-
-        <!--log4j日志包-->
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j</artifactId>
+            <version>1.3.8.RELEASE</version>
         </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -59,7 +73,12 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
         </dependency>
-
+        <!--Javabean 基本校验包-->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
+        </dependency>
 
         <!--自定义依赖-->
         <dependency>
